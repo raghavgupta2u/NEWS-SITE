@@ -73,7 +73,7 @@ header("Location: http://localhost/news-template/admin/post.php");
                         }
                           echo'<li class="'.$active.'"><a href="users.php?page='.$i.'">'.$i.'</a></li>';
                        }
-                       if($page+1 > $page){
+                       if($total_page > $page){
                         echo '<li><a href = "users.php?page='.($page+1).'">Next</a></li>';
                        }
                        
