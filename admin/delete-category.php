@@ -4,7 +4,7 @@ if($_SESSION["user_role"] == '0'){
     }
 include 'config.php';
 $u_id = $_GET['id'];
-$sql = "DELETE FROM category WHERE user_id = {$u_id}";
+$sql = "DELETE FROM category WHERE category_id = {$u_id}";
 $result = mysqli_query($con,$sql);
-header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/users.php");
+header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/category.php");
 ?>

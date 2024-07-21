@@ -9,7 +9,7 @@
               <div class="col-md-offset-3 col-md-6">
                   <!-- Form Start -->
                   
-                  <form action="" method="POST" autocomplete="off">
+                  <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST" autocomplete="off">
                       <div class="form-group">
                           <label>Category Name</label>
                           <input type="text" name="cat" class="form-control" placeholder="Category Name" required>
@@ -42,7 +42,6 @@
                             }
                         }
                     }
-                    mysqli_close($con);
                 ?>
               </div>
           </div>
