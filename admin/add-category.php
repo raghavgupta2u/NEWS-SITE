@@ -36,7 +36,7 @@
                                     VALUES ('{$category}')";
 
                             if (mysqli_query($con, $sql)){
-                            header("Location: http://localhost/news-template/admin/category.php");
+                            header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/category.php");
                             }else{
                             echo "<p style = 'color:red;text-align:center;margin: 10px 0';>Query Failed.</p>";
                             }

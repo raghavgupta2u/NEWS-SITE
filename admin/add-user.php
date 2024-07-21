@@ -1,6 +1,6 @@
 <?php include "header.php";
 if($_SESSION["user_role"] == '0'){
-    header("Location: http://localhost/news-template/admin/post.php");
+    header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/post.php");
     }
 if (isset($_POST['save'])) {
     include "config.php";
@@ -18,7 +18,7 @@ if (isset($_POST['save'])) {
     } else {
         $sql1 = "INSERT INTO user (first_name,last_name,username,password,role) VALUES('$fname','$lname','$user','$password','$role')";
         if(mysqli_query($con,$sql1)){
-        header("Location: http://localhost/news-template/admin/users.php");
+        header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/users.php");
     }
   }
 }

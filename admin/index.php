@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
-    header("Location: http://localhost/news-template/admin/users.php");
+    header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/users.php");
 }
 ?>
 <!doctype html>
@@ -52,7 +52,7 @@ if(isset($_SESSION["username"])){
                                   $_SESSION['user_id'] = $row['user_id'] ;
                                   $_SESSION['user_role']  = $row['role'];
 
-                                  header("Location: http://localhost/news-template/admin/users.php");
+                                  header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/users.php");
                                 }
                             }else{
                                echo'<div class="alert alert-danger">username and Password are not found</div>';

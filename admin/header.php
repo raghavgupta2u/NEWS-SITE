@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["username"])){
-    header("Location: http://localhost/news-template/admin/");
+    header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/");
 }
 ?>
 <!DOCTYPE html>

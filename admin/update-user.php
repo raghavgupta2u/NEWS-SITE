@@ -1,6 +1,6 @@
 <?php include "header.php"; 
 if($_SESSION["user_role"] == '0'){
-    header("Location: http://localhost/news-template/admin/post.php");
+    header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/post.php");
     }?>
 <?php   
   
@@ -17,7 +17,7 @@ if($_SESSION["user_role"] == '0'){
    
   $result = mysqli_query($con,$sql);
   if($result){
-    header("Location: http://localhost/news-template/admin/users.php");
+    header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/users.php");
   }
 
 }
