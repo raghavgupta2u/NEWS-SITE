@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
    if($result = mysqli_multi_query($con,$sql) or die('Query Faild')){
     header("Location: http://localhost/news-site-cms/NEWS-SITE/admin/post.php");
    }else{
-    echo "<div class=''alert a;ert-danger'>Query failed</div>";
+    echo "<div class='alert a;ert-danger'>Query failed</div>";
    }    
 }
 ?>
