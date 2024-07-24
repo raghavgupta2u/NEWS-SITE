@@ -20,7 +20,7 @@
 
                                         
                   include "config.php" ;
-                  $sql = "SELECT * FROM category DESC LIMIT {$offset},{$limit} ";
+                  $sql = "SELECT * FROM category LIMIT {$offset},{$limit} ";
                   $result = mysqli_query($con,$sql) or die("Query falid");
                   if(mysqli_num_rows($result)>0){
                        ?>
