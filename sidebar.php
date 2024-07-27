@@ -13,93 +13,39 @@
     </div>
     <!-- /search box -->
     <!-- recent posts box -->
+     <?php
+      include "config.php";
+      $sql = "SELECT *FROM post 
+                  LEFT JOIN category ON post.category = category.category_id
+                  LEFT JOIN user ON post.author = user.user_id
+                  ORDER BY post.post_id DESC ";
+                  $result = mysqli_query($con, $sql) or die("Query faild");
+                  if (mysqli_num_rows($result) > 0) {
+     ?>
     <div class="recent-post-container">
         <h4>Recent Posts</h4>
+        <?php 
+        while ($row = mysqli_fetch_assoc($result)) {
+        ?>
         <div class="recent-post">
             <a class="post-img" href="">
-                <img src="images/post-format.jpg" alt=""/>
+                <img src="admin/upload/<?php echo $row['post_img'];?>" alt=""/>
             </a>
             <div class="post-content">
-                <h5><a href="single.php">Lorem ipsum dolor sit amet</a></h5>
+                <h5><a href="single.php"><?php echo substr($row['description'],0,50). "...";?></a></h5>
                 <span>
                     <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php'>Html</a>
+                    <a href='category.php'><?php echo $row['category_name'];?></a>
                 </span>
                 <span>
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                    01 Nov, 2019
+                    <?php echo $row['post_date'];?>
                 </span>
-                <a class="read-more" href="single.php">read more</a>
+                <a class="read-more" href="single.php?id=<?php echo $row['post_id'];?>">read more</a>
             </div>
         </div>
-        <div class="recent-post">
-            <a class="post-img" href="">
-                <img src="images/post_1.jpg" alt=""/>
-            </a>
-            <div class="post-content">
-                <h5><a href="single.php">Lorem ipsum dolor sit amet</a></h5>
-                <span>
-                    <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php'>Html</a>
-                </span>
-                <span>
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                    01 Nov, 2019
-                </span>
-                <a class="read-more" href="single.php">read more</a>
-            </div>
-        </div>
-        <div class="recent-post">
-            <a class="post-img" href="">
-                <img src="images/post-format.jpg" alt=""/>
-            </a>
-            <div class="post-content">
-                <h5><a href="single.php">Lorem ipsum dolor sit amet</a></h5>
-                <span>
-                    <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php'>Html</a>
-                </span>
-                <span>
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                    01 Nov, 2019
-                </span>
-                <a class="read-more" href="single.php">read more</a>
-            </div>
-        </div>
-        <div class="recent-post">
-            <a class="post-img" href="">
-                <img src="images/post_1.jpg" alt=""/>
-            </a>
-            <div class="post-content">
-                <h5><a href="single.php">Lorem ipsum dolor sit amet</a></h5>
-                <span>
-                    <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php'>Html</a>
-                </span>
-                <span>
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                    01 Nov, 2019
-                </span>
-                <a class="read-more" href="single.php">read more</a>
-            </div>
-        </div>
-        <div class="recent-post">
-            <a class="post-img" href="">
-                <img src="images/post-format.jpg" alt=""/>
-            </a>
-            <div class="post-content">
-                <h5><a href="single.php">Lorem ipsum dolor sit amet</a></h5>
-                <span>
-                    <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php'>Html</a>
-                </span>
-                <span>
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                    01 Nov, 2019
-                </span>
-                <a class="read-more" href="single.php">read more</a>
-            </div>
-        </div>
+        <?php } ?>
     </div>
+    <?php } ?>
     <!-- /recent posts box -->
 </div>
