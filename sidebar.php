@@ -32,10 +32,10 @@
                 <img src="admin/upload/<?php echo $row['post_img'];?>" alt=""/>
             </a>
             <div class="post-content">
-                <h5><a href="single.php"><?php echo substr($row['description'],0,50). "...";?></a></h5>
+                <h5><a href="single.php?id=<?php echo $row['post_id'];?>"> <?php echo substr($row['description'],0,40). "...";?></a></h5>
                 <span>
                     <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php'><?php echo $row['category_name'];?></a>
+                    <a href='category.php?id=<?php echo $row['category'];?>'><?php echo $row['category_name'];?></a>
                 </span>
                 <span>
                     <i class="fa fa-calendar" aria-hidden="true"></i>

@@ -62,12 +62,15 @@
                         echo "<h2>Recod not found</h2>";
                     }
                     // pagination code
+                       $sql1 = "SELECT post FROM category WHERE category_id = {$c_id}";
+                       $result1 = mysqli_query($con,$sql1) or die ("Query faild");
+                       $row1 = mysqli_fetch_assoc($result1);
                        if(mysqli_num_rows($result)>0){
-                          $total_records = $row['post'];
+                          $total_records = $row1['post'];
                           $total_page = ceil($total_records/$limit);
                      echo"<ul class='pagination admin-pagination'>";
                      if($page > 1){
-                        echo '<li><a href = "index.php?page='.($page-1).'">Prev</a></li>';
+                        echo '<li><a href = "index.php?cid = '.$c_id.'&page='.($page-1).'">Prev</a></li>';
                        }
                      for($i = 1; $i<=$total_page ; $i++){
                         if($i == $page){
@@ -75,10 +78,10 @@
                         }else{
                            $active = "";
                         }
-                          echo'<li class="'.$active.'"><a href="index.php?page='.$i.'">'.$i.'</a></li>';
+                          echo'<li class="'.$active.'"><a href="index.php?cid = '.$c_id.'&page='.$i.'">'.$i.'</a></li>';
                        }
                        if($total_page > $page){
-                        echo '<li><a href = "index.php?page='.($page+1).'">Next</a></li>';
+                        echo '<li><a href = "index.php?cid = '.$c_id.'&page='.($page+1).'">Next</a></li>';
                        }
                        
                        echo '</ul>';

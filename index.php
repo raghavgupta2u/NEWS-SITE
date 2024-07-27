@@ -34,7 +34,7 @@
                                     <div class="post-information">
                                         <span>
                                             <i class="fa fa-tags" aria-hidden="true"></i>
-                                            <a href='category.php?id=<?php echo $row['post_id'];?>'><?php echo $row['category_name'];?></a>
+                                            <a href='category.php?id=<?php echo $row['category'];?>'><?php echo $row['category_name'];?></a>
                                         </span>
                                         <span>
                                             <i class="fa fa-user" aria-hidden="true"></i>
