@@ -15,10 +15,11 @@
     <!-- recent posts box -->
      <?php
       include "config.php";
+      $l=3;
       $sql = "SELECT *FROM post 
                   LEFT JOIN category ON post.category = category.category_id
                   LEFT JOIN user ON post.author = user.user_id
-                  ORDER BY post.post_id DESC ";
+                  ORDER BY post.post_id DESC LIMIT {$l} ";
                   $result = mysqli_query($con, $sql) or die("Query faild");
                   if (mysqli_num_rows($result) > 0) {
      ?>
@@ -35,7 +36,7 @@
                 <h5><a href="single.php?id=<?php echo $row['post_id'];?>"> <?php echo $row['title']?></a></h5>
                 <span>
                     <i class="fa fa-tags" aria-hidden="true"></i>
-                    <a href='category.php?aid=<?php echo $row['author'];?>'><?php echo $row['category_name'];?></a>
+                    <a href='category.php?id=<?php echo $row['category'];?>'><?php echo $row['category_name'];?></a>
                 </span>
                 <span>
                     <i class="fa fa-calendar" aria-hidden="true"></i>
