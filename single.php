@@ -20,12 +20,12 @@
                             <h3><?php echo $row['title'];?></h3>
                             <div class="post-information">
                                 <span>
-                                    <i class="fa fa-tags" aria-hidden="true"></i>
-                                    <?php echo $row['category_name'];?>
+                                  <i class="fa fa-tags" aria-hidden="true"></i>
+                                  <a href="category.php?id=<?php echo $row['category'];?>"><?php echo $row['category_name'];?></a>
                                 </span>
                                 <span>
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <a href='author.php'><?php echo $row['username'];?></a>
+                                    <a href='author.php?aid=<?php echo $row['author'];?>'><?php echo $row['username'];?></a>
                                 </span>
                                 <span>
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
