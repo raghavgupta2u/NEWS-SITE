@@ -65,7 +65,12 @@
                         <?php } ?>
                     </table>
                 <?php } 
-                       $sql1 = "SELECT * FROM post";
+                if ($_SESSION["user_role"] == '1') {
+                    $sql1 = "SELECT * FROM post ";
+                }elseif ($_SESSION["user_role"] == '0') {
+                    $sql1 = "SELECT *FROM post WHERE author = {$_SESSION['user_id']} ";
+                }
+                       
                        $result1 = mysqli_query($con,$sql1) or die ("Query faild");
                        if(mysqli_num_rows($result1)>0){
                           $total_records = mysqli_num_rows($result1);
